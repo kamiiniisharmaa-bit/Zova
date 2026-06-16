@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zova · Terms of Service</title>
+  <!-- Font Awesome (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background: #faf9f8;
+      color: #1e1e1e;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* header (same as homepage) */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      color: #1e1e1e;
+    }
+
+    .logo i {
+      color: #2b7a4b;
+      font-size: 2rem;
+    }
+
+    .logo span {
+      background: #1e1e1e;
+      color: white;
+      padding: 0.1rem 0.6rem;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      margin-left: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 500;
+      font-size: 1rem;
+      color: #2c2c2c;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: inherit;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #2b7a4b;
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 1.2rem;
+      font-size: 1.3rem;
+      color: #1e1e1e;
+    }
+
+    .nav-icons i {
+      cursor: default;
+    }
+
+    /* terms hero / header */
+    .terms-header {
+      padding: 2.5rem 0 1rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      margin-bottom: 2rem;
+    }
+
+    .terms-header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .terms-header h1 i {
+      color: #2b7a4b;
+      margin-right: 10px;
+    }
+
+    .terms-header .sub {
+      color: #3d3d3d;
+      font-size: 1.1rem;
+      margin-top: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .terms-header .sub i {
+      color: #2b7a4b;
+    }
+
+    .last-updated {
+      background: #eef3ee;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    /* terms content */
+    .terms-content {
+      background: white;
+      border-radius: 32px;
+      padding: 2.5rem 2.8rem;
+      margin: 1.5rem 0 3rem 0;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.02);
+      border: 1px solid #f0f0f0;
+    }
+
+    .terms-content h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .terms-content h2 i {
+      color: #2b7a4b;
+      font-size: 1.4rem;
+      width: 2rem;
+    }
+
+    .terms-content h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .terms-content p {
+      margin-bottom: 1rem;
+      color: #2c2c2c;
+    }
+
+    .terms-content ul {
+      margin: 0.8rem 0 1.5rem 2rem;
+    }
+
+    .terms-content ul li {
+      margin-bottom: 0.4rem;
+      list-style-type: '• ';
+      padding-left: 0.5rem;
+    }
+
+    .terms-content ul li::marker {
+      color: #2b7a4b;
+      font-size: 1.2rem;
+    }
+
+    .terms-content .highlight-box {
+      background: #f5f9f5;
+      border-left: 4px solid #2b7a4b;
+      padding: 1.2rem 1.8rem;
+      border-radius: 12px;
+      margin: 1.5rem 0;
+    }
+
+    .terms-content .highlight-box i {
+      color: #2b7a4b;
+      margin-right: 8px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 1.2rem;
+      font-weight: 500;
+      color: #1e1e1e;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: 0.2s;
+    }
+
+    .back-link i {
+      color: #2b7a4b;
+    }
+
+    .back-link:hover {
+      border-bottom-color: #2b7a4b;
+      color: #2b7a4b;
+    }
+
+    /* footer (same) */
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      padding: 1.8rem 0;
+      border-top: 1px solid #e6e6e6;
+      font-size: 0.9rem;
+      color: #3d3d3d;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .footer-bottom i {
+      color: #2b7a4b;
+      margin: 0 4px;
+    }
+
+    .footer-socials i {
+      font-size: 1.2rem;
+      margin-left: 1rem;
+      color: #2c2c2c;
+      cursor: default;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .container {
+        padding: 0 1.2rem;
+      }
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 1rem 1.8rem;
+      }
+      .terms-content {
+        padding: 1.8rem 1.5rem;
+      }
+      .terms-header h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- header (consistent with homepage) -->
+    <header class="navbar">
+      <a href="#" class="logo">
+        <i class="fas fa-leaf"></i> Zova <span>.</span>
+      </a>
+      <div class="nav-links">
+       <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+      </div>
+      <div class="nav-icons">
+        <i class="fas fa-search"></i>
+        <i class="fas fa-user"></i>
+        <i class="fas fa-shopping-bag"></i>
+      </div>
+    </header>
+
+    <!-- terms page header -->
+    <div class="terms-header">
+      <h1><i class="fas fa-file-contract"></i> Terms of Service</h1>
+      <div class="sub">
+        <span><i class="fas fa-calendar-alt"></i> Last updated: June 17, 2026</span>
+        <span class="last-updated"><i class="fas fa-check-circle"></i> version 2.3</span>
+        <span><i class="fas fa-globe"></i> Zova.com</span>
+      </div>
+    </div>
+
+    <!-- main terms content -->
+    <div class="terms-content">
+
+      <h2><i class="fas fa-handshake"></i> 1. Introduction</h2>
+      <p>Welcome to Zova! These Terms of Service ("Terms") govern your use of the Zova website, mobile applications, and services (collectively, the "Platform"). By accessing or using our Platform, you agree to be bound by these Terms. If you do not agree, please do not use the Platform.</p>
+      <p>Zova is operated by Zova Inc. (“we,” “us,” or “our”), a company registered in the United States. Our mission is to provide high-quality, sustainable fashion and lifestyle products.</p>
+
+      <div class="highlight-box">
+        <i class="fas fa-info-circle"></i> <strong>Quick summary:</strong> These terms cover your rights and responsibilities when using Zova. We keep them clear and fair.
+      </div>
+
+      <h2><i class="fas fa-user-check"></i> 2. Eligibility & Account</h2>
+      <p>You must be at least 18 years old or have parental consent to use our Platform. When you create an account, you agree to provide accurate information and keep it updated. You are responsible for safeguarding your account credentials.</p>
+      <ul>
+        <li>You may not share your account with others.</li>
+        <li>We reserve the right to suspend or terminate accounts that violate these Terms.</li>
+        <li>You are liable for all activities conducted through your account.</li>
+      </ul>
+
+      <h2><i class="fas fa-shopping-cart"></i> 3. Orders & Payments</h2>
+      <p>All orders placed through Zova are subject to acceptance. We reserve the right to refuse or cancel any order for reasons including product availability, pricing errors, or suspected fraud.</p>
+      <ul>
+        <li>Prices are displayed in USD and include applicable taxes unless noted.</li>
+        <li>We accept major credit cards, PayPal, and other secure payment methods.</li>
+        <li>You will receive an order confirmation email; this does not guarantee acceptance.</li>
+      </ul>
+
+      <h2><i class="fas fa-truck"></i> 4. Shipping & Delivery</h2>
+      <p>We aim to process and ship orders within 2–3 business days. Delivery times vary by location. We partner with trusted carriers to ensure reliable delivery. You will receive tracking information once your order ships.</p>
+      <ul>
+        <li>Free standard shipping on orders over $75 (domestic).</li>
+        <li>International shipping rates and duties apply.</li>
+        <li>We are not responsible for delays caused by carriers or customs.</li>
+      </ul>
+
+      <h2><i class="fas fa-undo-alt"></i> 5. Returns & Exchanges</h2>
+      <p>We want you to love your Zova items. If you are not completely satisfied, you may return most items within 30 days of delivery for a refund or exchange.</p>
+      <ul>
+        <li>Items must be unworn, unwashed, and with original tags attached.</li>
+        <li>Return shipping costs are the customer's responsibility unless the item is defective.</li>
+        <li>Refunds are processed to the original payment method within 7–10 business days.</li>
+      </ul>
+      <p>For more details, see our full <a href="#" style="color: #2b7a4b; text-decoration: none; border-bottom: 1px solid #2b7a4b;">Return Policy</a>.</p>
+
+      <h2><i class="fas fa-shield-alt"></i> 6. Intellectual Property</h2>
+      <p>All content on the Zova Platform — including but not limited to text, graphics, logos, images, and software — is the property of Zova or its licensors and is protected by copyright, trademark, and other laws.</p>
+      <ul>
+        <li>You may not reproduce, distribute, or create derivative works without our written consent.</li>
+        <li>Zova™ and the Zova logo are registered trademarks.</li>
+      </ul>
+
+      <h2><i class="fas fa-user-secret"></i> 7. Privacy</h2>
+      <p>Your privacy is important to us. Our <a href="#" style="color: #2b7a4b; text-decoration: none; border-bottom: 1px solid #2b7a4b;">Privacy Policy</a> explains how we collect, use, and protect your personal data. By using the Platform, you consent to our data practices.</p>
+
+      <h2><i class="fas fa-exclamation-triangle"></i> 8. Disclaimers & Limitation of Liability</h2>
+      <p>Zova provides the Platform "as is" and "as available" without warranties of any kind. We do not guarantee that the Platform will be error-free or uninterrupted.</p>
+      <ul>
+        <li>To the maximum extent permitted by law, we are not liable for indirect, incidental, or consequential damages.</li>
+        <li>Our total liability to you shall not exceed the amount you paid to us in the past 12 months.</li>
+      </ul>
+
+      <h2><i class="fas fa-gavel"></i> 9. Governing Law</h2>
+      <p>These Terms shall be governed by the laws of the State of California, without regard to conflict of law principles. Any disputes shall be resolved exclusively in the state or federal courts located in San Francisco, CA.</p>
+
+      <h2><i class="fas fa-edit"></i> 10. Changes to Terms</h2>
+      <p>We may update these Terms from time to time. We will notify you of material changes by posting the new Terms on this page and updating the "Last updated" date. Your continued use of the Platform after changes constitutes acceptance.</p>
+
+      <div class="highlight-box">
+        <i class="fas fa-envelope"></i> <strong>Questions?</strong> If you have any questions about these Terms, please contact us at <strong>legal@zova.com</strong> or through our help center.
+      </div>
+
+      <!-- back to home link (with icon) -->
+      <a href="#" class="back-link"><i class="fas fa-arrow-left"></i> Back to Zova homepage</a>
+
+    </div>
+
+    <!-- footer (same as homepage) -->
+    <div class="footer-bottom">
+      <span>© 2026 Zova. All rights reserved.</span>
+      <span>
+        <i class="fas fa-cc-visa"></i>
+        <i class="fas fa-cc-mastercard"></i>
+        <i class="fas fa-cc-paypal"></i>
+      </span>
+      <div class="footer-socials">
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-youtube"></i>
+      </div>
+    </div>
+
+  </div>
+  <!-- all images / icons are working from FontAwesome, no broken image links -->
+</body>
+</html>

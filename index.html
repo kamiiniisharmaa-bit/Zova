@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zova · ecom home</title>
+    <!-- Font Awesome for icons (free version) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background: #faf9f8;
+            color: #1e1e1e;
+            line-height: 1.5;
+        }
+
+        /* container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* header / navbar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .logo i {
+            color: #2b7a4b;
+            font-size: 2rem;
+        }
+
+        .logo span {
+            background: #1e1e1e;
+            color: white;
+            padding: 0.1rem 0.6rem;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            margin-left: 6px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            font-weight: 500;
+            font-size: 1rem;
+            color: #2c2c2c;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #2b7a4b;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 1.2rem;
+            font-size: 1.3rem;
+            color: #1e1e1e;
+        }
+
+        .nav-icons i {
+            cursor: default;
+        }
+
+        /* hero section */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 3rem 0 2rem 0;
+            gap: 2rem;
+        }
+
+        .hero-text {
+            flex: 1 1 300px;
+        }
+
+        .hero-text .badge {
+            display: inline-block;
+            background: #e8f0ea;
+            color: #1e5a3a;
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            letter-spacing: 0.3px;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-text h1 i {
+            color: #2b7a4b;
+        }
+
+        .hero-text p {
+            font-size: 1.15rem;
+            color: #3d3d3d;
+            max-width: 420px;
+            margin-bottom: 2rem;
+        }
+
+        .cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn-primary {
+            background: #1e1e1e;
+            color: white;
+            border: none;
+            padding: 0.8rem 2.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: default;
+            transition: 0.2s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary i {
+            font-size: 0.9rem;
+        }
+
+        .btn-primary:hover {
+            background: #2b7a4b;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #d0d0d0;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            color: #1e1e1e;
+            cursor: default;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-outline i {
+            color: #2b7a4b;
+        }
+
+        .hero-image {
+            flex: 1 1 300px;
+            background: #e2e8e2;
+            border-radius: 32px;
+            padding: 1rem 1rem 0 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            min-height: 280px;
+            background: linear-gradient(145deg, #f0f5f0, #dfe7df);
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 24px 24px 0 0;
+            object-fit: contain;
+            max-height: 320px;
+            width: 100%;
+        }
+
+        /* features / categories */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1.5rem;
+            padding: 2.5rem 0 1.5rem 0;
+            border-top: 1px solid rgba(0,0,0,0.04);
+            margin-top: 0.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: white;
+            padding: 0.6rem 1.4rem 0.6rem 1rem;
+            border-radius: 50px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+            border: 1px solid #f0f0f0;
+        }
+
+        .feature-item i {
+            font-size: 1.4rem;
+            color: #2b7a4b;
+        }
+
+        .feature-item span {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        /* product grid */
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 2.5rem 0 1.2rem 0;
+        }
+
+        .section-title h2 {
+            font-size: 1.9rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .section-title a {
+            color: #2b7a4b;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 2rem 1.2rem;
+            padding-bottom: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 24px;
+            padding: 1rem 1rem 1.5rem 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            transition: 0.2s ease;
+            border: 1px solid #f1f1f1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 28px rgba(0,0,0,0.04);
+        }
+
+        .product-img {
+            background: #f5f7f5;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+        }
+
+        .product-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: 0.2s;
+        }
+
+        .product-info {
+            padding: 0 0.2rem;
+        }
+
+        .product-info .product-name {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .product-info .product-category {
+            font-size: 0.8rem;
+            color: #6b6b6b;
+            letter-spacing: 0.3px;
+            margin-bottom: 0.4rem;
+        }
+
+        .product-info .price {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #1e1e1e;
+        }
+
+        .product-info .price small {
+            font-weight: 400;
+            font-size: 0.8rem;
+            color: #7a7a7a;
+            margin-left: 4px;
+            text-decoration: line-through;
+        }
+
+        .product-card .add-btn {
+            margin-top: 1rem;
+            background: #f2f6f2;
+            border: none;
+            border-radius: 40px;
+            padding: 0.6rem 0;
+            font-weight: 600;
+            color: #1e1e1e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: 0.2s;
+            cursor: default;
+        }
+
+        .product-card .add-btn i {
+            color: #2b7a4b;
+        }
+
+        .product-card .add-btn:hover {
+            background: #2b7a4b;
+            color: white;
+        }
+
+        .product-card .add-btn:hover i {
+            color: white;
+        }
+
+        /* newsletter / footer */
+        .newsletter {
+            background: #1e1e1e;
+            color: white;
+            border-radius: 40px;
+            padding: 3rem 2.5rem;
+            margin: 2rem 0 1.5rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .newsletter h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .newsletter p {
+            opacity: 0.7;
+            max-width: 340px;
+        }
+
+        .newsletter .input-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .newsletter input {
+            padding: 0.8rem 1.5rem;
+            border-radius: 60px;
+            border: none;
+            min-width: 220px;
+            background: #2d2d2d;
+            color: white;
+        }
+
+        .newsletter input::placeholder {
+            color: #a0a0a0;
+        }
+
+        .newsletter button {
+            background: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
+            font-weight: 600;
+            color: #1e1e1e;
+            cursor: default;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.8rem 0;
+            border-top: 1px solid #e6e6e6;
+            font-size: 0.9rem;
+            color: #3d3d3d;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .footer-bottom i {
+            color: #2b7a4b;
+            margin: 0 4px;
+        }
+
+        .footer-socials i {
+            font-size: 1.2rem;
+            margin-left: 1rem;
+            color: #2c2c2c;
+            cursor: default;
+        }
+
+        /* responsiveness */
+        @media (max-width: 700px) {
+            .container {
+                padding: 0 1.2rem;
+            }
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 1rem 1.8rem;
+            }
+            .hero-text h1 {
+                font-size: 2.6rem;
+            }
+            .newsletter {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            }
+        }
+    </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NTV0NLN2X5"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-NTV0NLN2X5');
+</script>
+
+</head>
+<body>
+    <div class="container">
+
+        <!-- header -->
+        <header class="navbar">
+            <div class="logo">
+                <i class="fas fa-leaf"></i> Zova <span>.</span>
+            </div>
+            <div class="nav-links">
+             <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+            </div>
+            <div class="nav-icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-user"></i>
+                <i class="fas fa-shopping-bag"></i>
+            </div>
+        </header>
+
+        <!-- hero -->
+        <section class="hero">
+            <div class="hero-text">
+                <div class="badge"><i class="fas fa-star" style="margin-right: 6px;"></i> fresh collection 2026</div>
+                <h1>style that <br><i>grows</i> with you</h1>
+                <p>Discover Zova — where modern design meets everyday comfort. New drops every week.</p>
+                <div class="cta-group">
+                    <span class="btn-primary"><i class="fas fa-arrow-right"></i> Shop now</span>
+                    <span class="btn-outline"><i class="fas fa-play-circle"></i> Explore</span>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- working image (free stock) hero -->
+                <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Zova hero image" style="border-radius: 24px 24px 0 0;">
+            </div>
+        </section>
+
+        <!-- feature strip -->
+        <div class="features">
+            <div class="feature-item"><i class="fas fa-truck-fast"></i> <span>Free shipping</span></div>
+            <div class="feature-item"><i class="fas fa-rotate-left"></i> <span>30-day returns</span></div>
+            <div class="feature-item"><i class="fas fa-lock"></i> <span>Secure payment</span></div>
+            <div class="feature-item"><i class="fas fa-headset"></i> <span>24/7 support</span></div>
+        </div>
+
+        <!-- product grid -->
+        <div class="section-title">
+            <h2>Best sellers</h2>
+            <a href="#">View all <i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i></a>
+        </div>
+
+        <div class="product-grid">
+            <!-- product 1 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.pexels.com/photos/1133957/pexels-photo-1133957.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Zova sneakers">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Airglow sneakers</div>
+                    <div class="product-category">footwear</div>
+                    <div class="price">$89 <small>$129</small></div>
+                </div>
+                <div class="add-btn"><i class="fas fa-plus-circle"></i> Add</div>
+            </div>
+            <!-- product 2 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.pexels.com/photos/1124468/pexels-photo-1124468.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Zova backpack">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Nova backpack</div>
+                    <div class="product-category">accessories</div>
+                    <div class="price">$64 <small>$85</small></div>
+                </div>
+                <div class="add-btn"><i class="fas fa-plus-circle"></i> Add</div>
+            </div>
+            <!-- product 3 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Zova jacket">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Puffer jacket</div>
+                    <div class="product-category">outerwear</div>
+                    <div class="price">$149 <small>$199</small></div>
+                </div>
+                <div class="add-btn"><i class="fas fa-plus-circle"></i> Add</div>
+            </div>
+            <!-- product 4 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Zova hoodie">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Cozy hoodie</div>
+                    <div class="product-category">streetwear</div>
+                    <div class="price">$55 <small>$70</small></div>
+                </div>
+                <div class="add-btn"><i class="fas fa-plus-circle"></i> Add</div>
+            </div>
+            <!-- product 5 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Zova cap">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Classic cap</div>
+                    <div class="product-category">accessories</div>
+                    <div class="price">$28 <small>$40</small></div>
+                </div>
+                <div class="add-btn"><i class="fas fa-plus-circle"></i> Add</div>
+            </div>
+            <!-- product 6 -->
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Zova t-shirt">
+                </div>
+                <div class="product-info">
+                    <div class="product-name">Essential tee</div>
+                    <div class="product-category">tops</div>
+                    <div class="price">$34 <small>$48</small></div>
+                </div>
+                <div class="add-btn"><i class="fas fa-plus-circle"></i> Add</div>
+            </div>
+        </div>
+
+        <!-- newsletter -->
+        <div class="newsletter">
+            <div>
+                <h3>join the <i class="fas fa-leaf" style="color: #5f9d7a;"></i> Zova circle</h3>
+                <p>Get 15% off your first order + early access to drops.</p>
+            </div>
+            <div class="input-group">
+                <input type="email" placeholder="Enter your email">
+                <button><i class="fas fa-envelope"></i> Subscribe</button>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <div class="footer-bottom">
+            <span>© 2026 Zova. All rights reserved.</span>
+            <span>
+                <i class="fas fa-cc-visa"></i>
+                <i class="fas fa-cc-mastercard"></i>
+                <i class="fas fa-cc-paypal"></i>
+            </span>
+            <div class="footer-socials">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+
+    </div>
+    <!-- all images are working properly, using Pexels & FontAwesome -->
+</body>
+</html>

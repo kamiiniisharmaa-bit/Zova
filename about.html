@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zova · About Us</title>
+    <!-- Font Awesome (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background: #faf9f8;
+            color: #1e1e1e;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* header (consistent) */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            color: #1e1e1e;
+        }
+
+        .logo i {
+            color: #2b7a4b;
+            font-size: 2rem;
+        }
+
+        .logo span {
+            background: #1e1e1e;
+            color: white;
+            padding: 0.1rem 0.6rem;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            margin-left: 6px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            font-weight: 500;
+            font-size: 1rem;
+            color: #2c2c2c;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #2b7a4b;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 1.2rem;
+            font-size: 1.3rem;
+            color: #1e1e1e;
+        }
+
+        .nav-icons i {
+            cursor: default;
+        }
+
+        /* about header */
+        .about-header {
+            padding: 2.5rem 0 1rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.04);
+            margin-bottom: 2rem;
+        }
+
+        .about-header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .about-header h1 i {
+            color: #2b7a4b;
+            margin-right: 10px;
+        }
+
+        .about-header .sub {
+            color: #3d3d3d;
+            font-size: 1.1rem;
+            margin-top: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .about-header .sub i {
+            color: #2b7a4b;
+        }
+
+        /* about content */
+        .about-content {
+            background: white;
+            border-radius: 32px;
+            padding: 2.5rem 2.8rem;
+            margin: 1.5rem 0 3rem 0;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.02);
+            border: 1px solid #f0f0f0;
+        }
+
+        .about-content h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .about-content h2 i {
+            color: #2b7a4b;
+            font-size: 1.4rem;
+            width: 2rem;
+        }
+
+        .about-content h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .about-content p {
+            margin-bottom: 1rem;
+            color: #2c2c2c;
+        }
+
+        .about-content ul {
+            margin: 0.8rem 0 1.5rem 2rem;
+        }
+
+        .about-content ul li {
+            margin-bottom: 0.4rem;
+            list-style-type: '• ';
+            padding-left: 0.5rem;
+        }
+
+        .about-content ul li::marker {
+            color: #2b7a4b;
+            font-size: 1.2rem;
+        }
+
+        .highlight-box {
+            background: #f5f9f5;
+            border-left: 4px solid #2b7a4b;
+            padding: 1.2rem 1.8rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box i {
+            color: #2b7a4b;
+            margin-right: 8px;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .mission-card {
+            background: #f8faf8;
+            border-radius: 20px;
+            padding: 1.8rem 1.2rem;
+            text-align: center;
+            border: 1px solid #eef3ee;
+        }
+
+        .mission-card i {
+            font-size: 2.4rem;
+            color: #2b7a4b;
+            margin-bottom: 0.5rem;
+        }
+
+        .mission-card h3 {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .mission-card p {
+            font-size: 0.95rem;
+            color: #4a4a4a;
+            margin-bottom: 0;
+        }
+
+        .team-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin: 1.8rem 0 0.5rem 0;
+        }
+
+        .team-member {
+            text-align: center;
+            flex: 1 1 120px;
+        }
+
+        .team-member .avatar {
+            background: #e8f0ea;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.6rem auto;
+            font-size: 2.6rem;
+            color: #2b7a4b;
+            border: 2px solid #d9e6dc;
+        }
+
+        .team-member h4 {
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .team-member .role {
+            font-size: 0.85rem;
+            color: #5e5e5e;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 1.2rem;
+            font-weight: 500;
+            color: #1e1e1e;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: 0.2s;
+        }
+
+        .back-link i {
+            color: #2b7a4b;
+        }
+
+        .back-link:hover {
+            border-bottom-color: #2b7a4b;
+            color: #2b7a4b;
+        }
+
+        /* footer */
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.8rem 0;
+            border-top: 1px solid #e6e6e6;
+            font-size: 0.9rem;
+            color: #3d3d3d;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .footer-bottom i {
+            color: #2b7a4b;
+            margin: 0 4px;
+        }
+
+        .footer-socials i {
+            font-size: 1.2rem;
+            margin-left: 1rem;
+            color: #2c2c2c;
+            cursor: default;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                padding: 0 1.2rem;
+            }
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 1rem 1.8rem;
+            }
+            .about-content {
+                padding: 1.8rem 1.5rem;
+            }
+            .about-header h1 {
+                font-size: 2.2rem;
+            }
+            .mission-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- header -->
+        <header class="navbar">
+            <a href="#" class="logo">
+                <i class="fas fa-leaf"></i> Zova <span>.</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+            </div>
+            <div class="nav-icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-user"></i>
+                <i class="fas fa-shopping-bag"></i>
+            </div>
+        </header>
+
+        <!-- about header -->
+        <div class="about-header">
+            <h1><i class="fas fa-leaf"></i> About Zova</h1>
+            <div class="sub">
+                <span><i class="fas fa-seedling"></i> rooted in style, built for tomorrow</span>
+                <span><i class="fas fa-map-pin"></i> San Francisco, CA</span>
+                <span><i class="fas fa-calendar-alt"></i> est. 2023</span>
+            </div>
+        </div>
+
+        <!-- about content -->
+        <div class="about-content">
+
+            <h2><i class="fas fa-rocket"></i> Our Story</h2>
+            <p>Zova was born from a simple idea: fashion should be effortless, sustainable, and accessible. What started as a small pop-up in San Francisco has grown into a global community of conscious creators and style-seekers. We believe that what you wear should not only look good but also feel good — for you and for the planet.</p>
+            <p>Every piece in our collection is designed with purpose: timeless silhouettes, premium fabrics, and ethical craftsmanship. We work directly with artisans and manufacturers who share our commitment to fair labor and environmental responsibility.</p>
+
+            <div class="highlight-box">
+                <i class="fas fa-quote-left"></i> <strong>Our north star:</strong> "To inspire a world where fashion meets function, and every purchase plants a seed for a better future."
+            </div>
+
+            <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+            <p>We're on a mission to redefine modern essentials. We aim to:</p>
+            <ul>
+                <li><strong>Reduce waste:</strong> By using recycled materials and minimizing packaging.</li>
+                <li><strong>Empower communities:</strong> Partnering with ethical manufacturers and giving back to local causes.</li>
+                <li><strong>Inspire confidence:</strong> Creating versatile, durable pieces that make you feel unstoppable.</li>
+            </ul>
+
+            <!-- mission cards -->
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <i class="fas fa-recycle"></i>
+                    <h3>Sustainable</h3>
+                    <p>Eco-friendly materials, circular design.</p>
+                </div>
+                <div class="mission-card">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <h3>Ethical</h3>
+                    <p>Fair wages, safe conditions, transparency.</p>
+                </div>
+                <div class="mission-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Inclusive</h3>
+                    <p>Designed for all bodies, all styles.</p>
+                </div>
+                <div class="mission-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Quality</h3>
+                    <p>Built to last, season after season.</p>
+                </div>
+            </div>
+
+            <h2><i class="fas fa-heart"></i> What We Stand For</h2>
+            <p>At Zova, we believe that small choices create big change. That's why we prioritize:</p>
+            <ul>
+                <li><strong>Slow fashion:</strong> We release curated drops, not endless collections. Every piece is made to be worn and loved for years.</li>
+                <li><strong>Radical transparency:</strong> We share our supply chain, our impact, and our progress — the good and the challenging.</li>
+                <li><strong>Community first:</strong> Our customers are at the heart of everything we do. Your feedback shapes our designs and our direction.</li>
+            </ul>
+
+            <!-- team section -->
+            <h2><i class="fas fa-users"></i> Meet the Team</h2>
+            <p>We're a passionate group of designers, engineers, and dreamers who believe in the power of thoughtful design.</p>
+            <div class="team-section">
+                <div class="team-member">
+                    <div class="avatar"><i class="fas fa-user-circle"></i></div>
+                    <h4>Maya Chen</h4>
+                    <span class="role">Founder & Creative Director</span>
+                </div>
+                <div class="team-member">
+                    <div class="avatar"><i class="fas fa-user-circle"></i></div>
+                    <h4>Jordan Lee</h4>
+                    <span class="role">Head of Sustainability</span>
+                </div>
+                <div class="team-member">
+                    <div class="avatar"><i class="fas fa-user-circle"></i></div>
+                    <h4>Alex Rivera</h4>
+                    <span class="role">Product Design Lead</span>
+                </div>
+                <div class="team-member">
+                    <div class="avatar"><i class="fas fa-user-circle"></i></div>
+                    <h4>Samira Okafor</h4>
+                    <span class="role">Community & Impact</span>
+                </div>
+            </div>
+
+            <h2><i class="fas fa-seedling"></i> Our Impact</h2>
+            <p>Since our founding, we've planted over 5,000 trees, diverted 12 tons of textile waste from landfills, and donated 3% of our profits to organizations supporting education and environmental justice.</p>
+            <p>We're just getting started. Every Zova purchase contributes to a better world — and we're grateful to have you on this journey with us.</p>
+
+            <div class="highlight-box">
+                <i class="fas fa-handshake"></i> <strong>Join the movement:</strong> Follow us on social media, share your Zova looks with <strong>#ZovaStyle</strong>, and help us build a more conscious community.
+            </div>
+
+            <!-- back link -->
+            <a href="#" class="back-link"><i class="fas fa-arrow-left"></i> Back to Zova homepage</a>
+
+        </div>
+
+        <!-- footer -->
+        <div class="footer-bottom">
+            <span>© 2026 Zova. All rights reserved.</span>
+            <span>
+                <i class="fas fa-cc-visa"></i>
+                <i class="fas fa-cc-mastercard"></i>
+                <i class="fas fa-cc-paypal"></i>
+            </span>
+            <div class="footer-socials">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+
+    </div>
+    <!-- all icons from FontAwesome, no broken images -->
+</body>
+</html>
